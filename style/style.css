@@ -27,6 +27,11 @@
     animation: blink 1s infinite;
 }
 
+/* Cursor piscante para efeito de digitação */
+.cursor-blink {
+    animation: blink 0.75s step-end infinite;
+}
+
 @keyframes blink {
     50% { opacity: 0; }
 }
