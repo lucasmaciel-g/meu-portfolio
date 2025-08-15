@@ -1,3 +1,6 @@
+/* Importação das fontes */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 /* Efeito de grid tecnológico no fundo */
 .tech-grid {
     background-image: 
@@ -155,4 +158,27 @@
 .digital-clock {
     font-family: 'Courier New', monospace;
     letter-spacing: 0.1em;
+}
+
+/* Typography classes for custom fonts */
+.font-press-start {
+    font-family: 'Press Start 2P', monospace;
+}
+
+/* Title and subtitle styles */
+.title-primary {
+    font-family: 'Press Start 2P', monospace;
+    letter-spacing: 0.05em;
+}
+
+.title-secondary {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.9em;
+    letter-spacing: 0.02em;
+}
+
+.title-elegant {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.8em;
+    letter-spacing: 0.03em;
 }
