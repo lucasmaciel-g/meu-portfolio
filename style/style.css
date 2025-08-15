@@ -1,0 +1,153 @@
+/* Efeito de grid tecnológico no fundo */
+.tech-grid {
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 50px 50px; }
+}
+
+/* Efeito de brilho neon */
+.neon-glow {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.neon-text {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+/* Efeito de código digitando */
+.typing-effect::after {
+    content: '_';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Efeito de hologram */
+.hologram {
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+/* Efeito de scan line */
+.scan-line {
+    position: relative;
+    overflow: hidden;
+}
+
+.scan-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.4), transparent);
+    animation: scan 3s infinite;
+}
+
+@keyframes scan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+/* Calculator buttons */
+.calc-btn {
+    height: 4rem;
+    font-size: 1.125rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+    transform: scale(1);
+    font-family: monospace;
+}
+
+.calc-btn:hover {
+    transform: scale(1.05);
+}
+
+.calc-btn:active {
+    transform: scale(0.95);
+}
+
+.calc-btn-number {
+    background-color: #1f2937;
+    color: #a5f3fc;
+    border: 1px solid rgba(8, 145, 178, 0.3);
+}
+
+.calc-btn-number:hover {
+    background-color: #374151;
+}
+
+.calc-btn-operator {
+    background: linear-gradient(to right, #ea580c, #dc2626);
+    color: white;
+}
+
+.calc-btn-operator:hover {
+    background: linear-gradient(to right, #c2410c, #b91c1c);
+}
+
+.calc-btn-function {
+    background: linear-gradient(to right, #9333ea, #4338ca);
+    color: white;
+}
+
+.calc-btn-function:hover {
+    background: linear-gradient(to right, #7c3aed, #3730a3);
+}
+
+.calc-btn-equals {
+    background: linear-gradient(to right, #059669, #047857);
+    color: white;
+}
+
+.calc-btn-equals:hover {
+    background: linear-gradient(to right, #047857, #065f46);
+}
+
+/* Display */
+.calc-display {
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.05em;
+}
+
+/* History animation */
+.history-item {
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Clock animation */
+.clock-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Digital clock styling */
+.digital-clock {
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.1em;
+}

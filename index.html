@@ -5,68 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[Lucas Maciel] - Portfólio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Efeito de grid tecnológico no fundo */
-        .tech-grid {
-            background-image: 
-                linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: grid-move 20s linear infinite;
-        }
-        
-        @keyframes grid-move {
-            0% { background-position: 0 0; }
-            100% { background-position: 50px 50px; }
-        }
-        
-        /* Efeito de brilho neon */
-        .neon-glow {
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-        }
-        
-        .neon-text {
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
-        }
-        
-        /* Efeito de código digitando */
-        .typing-effect::after {
-            content: '_';
-            animation: blink 1s infinite;
-        }
-        
-        @keyframes blink {
-            50% { opacity: 0; }
-        }
-        
-        /* Efeito de hologram */
-        .hologram {
-            background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
-            border: 1px solid rgba(0, 255, 255, 0.3);
-        }
-        
-        /* Efeito de scan line */
-        .scan-line {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .scan-line::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.4), transparent);
-            animation: scan 3s infinite;
-        }
-        
-        @keyframes scan {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-    </style>
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body class="bg-black text-cyan-100 font-mono tech-grid relative overflow-x-hidden">
     <!-- Header e Navbar -->
