@@ -74,69 +74,142 @@
         <section class="py-8 category-section" data-category="texto">
             <div class="container mx-auto px-6">
                 <h2 class="text-2xl font-bold text-cyan-400 mb-6 text-center">Ferramentas para Textos</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     
                     <!-- Card: Tudo em Maiúsculas -->
-                    <div class="hologram rounded-lg overflow-hidden scan-line group hover:neon-glow transition-all duration-300">
-                        <div class="h-32 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 flex items-center justify-center border-b border-cyan-400/30">
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-cyan-300 mb-1">ABC</div>
-                                <div class="text-s text-gray-400">texto → TEXTO</div>
+                    <a href="./textos/maiusculo.html" class="card-tool group relative block bg-gray-900/80 rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyan-500/20 border border-transparent hover:border-cyan-400/30">
+                        <!-- Card header with gradient overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        
+                        <!-- Icon area -->
+                        <div class="pt-6 px-6 flex justify-between items-start">
+                            <div class="bg-cyan-400/10 w-12 h-12 rounded-lg flex items-center justify-center text-cyan-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7V4h16v3M9 20h6M4 7h16l-3 13H7L4 7z" />
+                                </svg>
+                            </div>
+                            <span class="text-xs px-2 py-1 bg-cyan-900/30 text-cyan-400 rounded-full font-mono">texto</span>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">Tudo em Maiúsculo</h3>
+                            <p class="text-gray-400 text-sm mb-3">
+                                Transforma qualquer texto para letras MAIÚSCULAS de forma rápida.
+                            </p>
+                            
+                            <!-- Usage example -->
+                            <div class="bg-black/30 rounded p-3 mb-4 font-mono text-xs">
+                                <div class="text-gray-500">Input:</div>
+                                <div class="text-gray-300">Hello world</div>
+                                <div class="text-gray-500 mt-1">Output:</div>
+                                <div class="text-cyan-300">HELLO WORLD</div>
+                            </div>
+                            
+                            <!-- Call to action -->
+                            <div class="flex items-center justify-between mt-2">
+                                <div class="text-xs text-gray-500">
+                                    <span class="text-cyan-400">#</span> Text Transform
+                                </div>
+                                <div class="text-cyan-400 group-hover:translate-x-1 transition-transform duration-300 flex items-center">
+                                    <span class="mr-1 text-sm">Usar</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-lg font-semibold text-cyan-300 mb-2">TUDO EM MAIÚSCULO</h3>
-                            <p class="text-sm text-green-200 mb-4">
-                                uppercase.<br>
-                                Transforma todas as letras para maiúsculo.
-                            </p>
-                            <a href="./textos/maiusculo.html" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2 rounded transition-colors font-mono text-sm">
-                                Usar
-                            </a>
-                        </div>
-                    </div>
+                    </a>
 
                     <!-- Card: Tudo em Minúsculas -->
-                    <div class="hologram rounded-lg overflow-hidden scan-line group hover:neon-glow transition-all duration-300">
-                        <div class="h-32 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 flex items-center justify-center border-b border-cyan-400/30">
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-cyan-300 mb-1">abc</div>
-                                <div class="text-s text-gray-400">TEXTO → texto</div>
+                    <a href="ferramenta-minusculo.html" class="card-tool group relative block bg-gray-900/80 rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyan-500/20 border border-transparent hover:border-cyan-400/30">
+                        <!-- Card header with gradient overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        
+                        <!-- Icon area -->
+                        <div class="pt-6 px-6 flex justify-between items-start">
+                            <div class="bg-cyan-400/10 w-12 h-12 rounded-lg flex items-center justify-center text-cyan-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
+                                </svg>
+                            </div>
+                            <span class="text-xs px-2 py-1 bg-cyan-900/30 text-cyan-400 rounded-full font-mono">texto</span>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">Tudo em Minúsculo</h3>
+                            <p class="text-gray-400 text-sm mb-3">
+                                Converte qualquer texto para letras minúsculas instantaneamente.
+                            </p>
+                            
+                            <!-- Usage example -->
+                            <div class="bg-black/30 rounded p-3 mb-4 font-mono text-xs">
+                                <div class="text-gray-500">Input:</div>
+                                <div class="text-gray-300">HELLO WORLD</div>
+                                <div class="text-gray-500 mt-1">Output:</div>
+                                <div class="text-cyan-300">hello world</div>
+                            </div>
+                            
+                            <!-- Call to action -->
+                            <div class="flex items-center justify-between mt-2">
+                                <div class="text-xs text-gray-500">
+                                    <span class="text-cyan-400">#</span> Text Transform
+                                </div>
+                                <div class="text-cyan-400 group-hover:translate-x-1 transition-transform duration-300 flex items-center">
+                                    <span class="mr-1 text-sm">Usar</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-lg font-semibold text-cyan-300 mb-2">TUDO EM MINÚSCULO</h3>
-                            <p class="text-sm text-green-200 mb-4">
-                                Tudo em minúsculas.<br>
-                                Infraestrutura Brasília<br>
-                                Infraestrutura Brasília
-                            </p>
-                            <a href="ferramenta-minusculo.html" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2 rounded transition-colors font-mono text-sm">
-                                Usar
-                            </a>
-                        </div>
-                    </div>
+                    </a>
 
                     <!-- Card: Base64 Converter -->
-                    <div class="hologram rounded-lg overflow-hidden scan-line group hover:neon-glow transition-all duration-300">
-                        <div class="h-32 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 flex items-center justify-center border-b border-cyan-400/30">
-                            <div class="text-center">
-                                <div class="text-lg font-bold text-cyan-300 mb-1">Base64</div>
-                                <div class="text-s text-gray-400">encode/decode</div>
+                    <a href="ferramenta-base64.html" class="card-tool group relative block bg-gray-900/80 rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyan-500/20 border border-transparent hover:border-cyan-400/30">
+                        <!-- Card header with gradient overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        
+                        <!-- Icon area -->
+                        <div class="pt-6 px-6 flex justify-between items-start">
+                            <div class="bg-cyan-400/10 w-12 h-12 rounded-lg flex items-center justify-center text-cyan-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                                </svg>
+                            </div>
+                            <span class="text-xs px-2 py-1 bg-cyan-900/30 text-cyan-400 rounded-full font-mono">texto</span>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">Base64 Converter</h3>
+                            <p class="text-gray-400 text-sm mb-3">
+                                Codifica e decodifica textos em Base64 facilmente.
+                            </p>
+                            
+                            <!-- Usage example -->
+                            <div class="bg-black/30 rounded p-3 mb-4 font-mono text-xs">
+                                <div class="text-gray-500">Text:</div>
+                                <div class="text-gray-300">Hello</div>
+                                <div class="text-gray-500 mt-1">Base64:</div>
+                                <div class="text-cyan-300">SGVsbG8=</div>
+                            </div>
+                            
+                            <!-- Call to action -->
+                            <div class="flex items-center justify-between mt-2">
+                                <div class="text-xs text-gray-500">
+                                    <span class="text-cyan-400">#</span> Encoding
+                                </div>
+                                <div class="text-cyan-400 group-hover:translate-x-1 transition-transform duration-300 flex items-center">
+                                    <span class="mr-1 text-sm">Usar</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-lg font-semibold text-cyan-300 mb-2">BASE64 CONVERTER</h3>
-                            <p class="text-sm text-green-200 mb-4">
-                                Encode/decode Base64.<br>
-                                Infraestrutura Brasília<br>
-                                Infraestrutura Brasília
-                            </p>
-                            <a href="ferramenta-base64.html" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2 rounded transition-colors font-mono text-sm">
-                                Usar
-                            </a>
-                        </div>
-                    </div>
+                    </a>
 
                 </div>
             </div>
@@ -146,49 +219,97 @@
         <section class="py-8 category-section" data-category="numeros">
             <div class="container mx-auto px-6">
                 <h2 class="text-2xl font-bold text-green-400 mb-6 text-center">Ferramentas para Números</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     
                     <!-- Card: Calculadora -->
-                    <div class="hologram rounded-lg overflow-hidden scan-line group hover:neon-glow transition-all duration-300">
-                        <div class="h-32 bg-gradient-to-br from-green-600/20 to-emerald-600/20 flex items-center justify-center border-b border-green-400/30">
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-green-300 mb-1">1+1=2</div>
-                                <div class="text-s text-gray-400">calculator</div>
+                    <a href="./numeros/calculadora.html" class="card-tool group relative block bg-gray-900/80 rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20 border border-transparent hover:border-emerald-400/30">
+                        <!-- Card header with gradient overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        
+                        <!-- Icon area -->
+                        <div class="pt-6 px-6 flex justify-between items-start">
+                            <div class="bg-emerald-400/10 w-12 h-12 rounded-lg flex items-center justify-center text-emerald-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <span class="text-xs px-2 py-1 bg-emerald-900/30 text-emerald-400 rounded-full font-mono">números</span>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">Calculadora</h3>
+                            <p class="text-gray-400 text-sm mb-3">
+                                Calculadora científica com funções avançadas e histórico.
+                            </p>
+                            
+                            <!-- Usage example -->
+                            <div class="bg-black/30 rounded p-3 mb-4 font-mono text-xs">
+                                <div class="text-gray-500">Funções:</div>
+                                <div class="text-emerald-300">+, -, *, /, ^, √, sin, cos, log</div>
+                                <div class="text-gray-500 mt-1">Exemplo:</div>
+                                <div class="text-gray-300">2 × (3 + 4) = 14</div>
+                            </div>
+                            
+                            <!-- Call to action -->
+                            <div class="flex items-center justify-between mt-2">
+                                <div class="text-xs text-gray-500">
+                                    <span class="text-emerald-400">#</span> Math
+                                </div>
+                                <div class="text-emerald-400 group-hover:translate-x-1 transition-transform duration-300 flex items-center">
+                                    <span class="mr-1 text-sm">Usar</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-lg font-semibold text-green-300 mb-2">CALCULADORA</h3>
-                            <p class="text-sm text-green-200 mb-4">
-                                Calculadora básica.<br>
-                                Infraestrutura Brasília<br>
-                                Infraestrutura Brasília
-                            </p>
-                            <a href="./numeros/calculadora.html" class="block w-full bg-green-600 hover:bg-green-700 text-white text-center py-2 rounded transition-colors font-mono text-sm">
-                                Usar
-                            </a>
-                        </div>
-                    </div>
+                    </a>
 
                     <!-- Card: Conversor de Moedas -->
-                    <div class="hologram rounded-lg overflow-hidden scan-line group hover:neon-glow transition-all duration-300">
-                        <div class="h-32 bg-gradient-to-br from-green-600/20 to-emerald-600/20 flex items-center justify-center border-b border-green-400/30">
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-green-300 mb-1">$€¥</div>
-                                <div class="text-s text-gray-400">currency</div>
+                    <a href="ferramenta-moedas.html" class="card-tool group relative block bg-gray-900/80 rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-emerald-500/20 border border-transparent hover:border-emerald-400/30">
+                        <!-- Card header with gradient overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        
+                        <!-- Icon area -->
+                        <div class="pt-6 px-6 flex justify-between items-start">
+                            <div class="bg-emerald-400/10 w-12 h-12 rounded-lg flex items-center justify-center text-emerald-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                                </svg>
+                            </div>
+                            <span class="text-xs px-2 py-1 bg-emerald-900/30 text-emerald-400 rounded-full font-mono">números</span>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">Conversor de Moedas</h3>
+                            <p class="text-gray-400 text-sm mb-3">
+                                Converte valores entre diferentes moedas com taxas atualizadas.
+                            </p>
+                            
+                            <!-- Usage example -->
+                            <div class="bg-black/30 rounded p-3 mb-4 font-mono text-xs">
+                                <div class="text-gray-500">Conversão:</div>
+                                <div class="text-gray-300">R$ 100,00 → $ 18.50</div>
+                                <div class="text-gray-500 mt-1">Moedas:</div>
+                                <div class="text-emerald-300">USD, EUR, BRL, GBP</div>
+                            </div>
+                            
+                            <!-- Call to action -->
+                            <div class="flex items-center justify-between mt-2">
+                                <div class="text-xs text-gray-500">
+                                    <span class="text-emerald-400">#</span> Finance
+                                </div>
+                                <div class="text-emerald-400 group-hover:translate-x-1 transition-transform duration-300 flex items-center">
+                                    <span class="mr-1 text-sm">Usar</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-lg font-semibold text-green-300 mb-2">CONVERSOR MOEDAS</h3>
-                            <p class="text-sm text-green-200 mb-4">
-                                Converte moedas.<br>
-                                Infraestrutura Brasília<br>
-                                Infraestrutura Brasília
-                            </p>
-                            <a href="ferramenta-moedas.html" class="block w-full bg-green-600 hover:bg-green-700 text-white text-center py-2 rounded transition-colors font-mono text-sm">
-                                Usar
-                            </a>
-                        </div>
-                    </div>
+                    </a>
 
                 </div>
             </div>
@@ -198,49 +319,99 @@
         <section class="py-8 category-section" data-category="datas">
             <div class="container mx-auto px-6">
                 <h2 class="text-2xl font-bold text-purple-400 mb-6 text-center">Ferramentas para Datas</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     
                     <!-- Card: Timestamp Converter -->
-                    <div class="hologram rounded-lg overflow-hidden scan-line group hover:neon-glow transition-all duration-300">
-                        <div class="h-32 bg-gradient-to-br from-purple-600/20 to-pink-600/20 flex items-center justify-center border-b border-purple-400/30">
-                            <div class="text-center">
-                                <div class="text-lg font-bold text-purple-300 mb-1">1640995200</div>
-                                <div class="text-s text-gray-400">timestamp → data</div>
+                    <a href="./datas/timestamp.html" class="card-tool group relative block bg-gray-900/80 rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/20 border border-transparent hover:border-purple-400/30">
+                        <!-- Card header with gradient overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        
+                        <!-- Icon area -->
+                        <div class="pt-6 px-6 flex justify-between items-start">
+                            <div class="bg-purple-400/10 w-12 h-12 rounded-lg flex items-center justify-center text-purple-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <span class="text-xs px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full font-mono">datas</span>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">Gerador de Timestamp</h3>
+                            <p class="text-gray-400 text-sm mb-3">
+                                Converte entre timestamp Unix e datas legíveis bidirecionalmente.
+                            </p>
+                            
+                            <!-- Usage example -->
+                            <div class="bg-black/30 rounded p-3 mb-4 font-mono text-xs">
+                                <div class="text-gray-500">Timestamp:</div>
+                                <div class="text-gray-300">1735689600</div>
+                                <div class="text-gray-500 mt-1">Data:</div>
+                                <div class="text-purple-300">31/12/2024 12:00:00</div>
+                            </div>
+                            
+                            <!-- Call to action -->
+                            <div class="flex items-center justify-between mt-2">
+                                <div class="text-xs text-gray-500">
+                                    <span class="text-purple-400">#</span> DateTime
+                                </div>
+                                <div class="text-purple-400 group-hover:translate-x-1 transition-transform duration-300 flex items-center">
+                                    <span class="mr-1 text-sm">Usar</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-lg font-semibold text-purple-300 mb-2">TIMESTAMP CONVERTER</h3>
-                            <p class="text-sm text-green-200 mb-4">
-                                Converte timestamp.<br>
-                                Infraestrutura Brasília<br>
-                                Infraestrutura Brasília
-                            </p>
-                            <a href="./datas/timestamp.html" class="block w-full bg-purple-600 hover:bg-purple-700 text-white text-center py-2 rounded transition-colors font-mono text-sm">
-                                Usar
-                            </a>
-                        </div>
-                    </div>
+                    </a>
 
                     <!-- Card: Diferença entre Datas -->
-                    <div class="hologram rounded-lg overflow-hidden scan-line group hover:neon-glow transition-all duration-300">
-                        <div class="h-32 bg-gradient-to-br from-purple-600/20 to-pink-600/20 flex items-center justify-center border-b border-purple-400/30">
-                            <div class="text-center">
-                                <div class="text-lg font-bold text-purple-300 mb-1">📅 ↔ 📅</div>
-                                <div class="text-s text-gray-400">date diff</div>
+                    <a href="ferramenta-diferenca-datas.html" class="card-tool group relative block bg-gray-900/80 rounded-xl overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/20 border border-transparent hover:border-purple-400/30">
+                        <!-- Card header with gradient overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        
+                        <!-- Icon area -->
+                        <div class="pt-6 px-6 flex justify-between items-start">
+                            <div class="bg-purple-400/10 w-12 h-12 rounded-lg flex items-center justify-center text-purple-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <span class="text-xs px-2 py-1 bg-purple-900/30 text-purple-400 rounded-full font-mono">datas</span>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">Diferença entre Datas</h3>
+                            <p class="text-gray-400 text-sm mb-3">
+                                Calcula a diferença entre duas datas em dias, horas e minutos.
+                            </p>
+                            
+                            <!-- Usage example -->
+                            <div class="bg-black/30 rounded p-3 mb-4 font-mono text-xs">
+                                <div class="text-gray-500">De:</div>
+                                <div class="text-gray-300">01/01/2024</div>
+                                <div class="text-gray-500 mt-1">Até:</div>
+                                <div class="text-gray-300">31/12/2024</div>
+                                <div class="text-gray-500 mt-1">Resultado:</div>
+                                <div class="text-purple-300">365 dias</div>
+                            </div>
+                            
+                            <!-- Call to action -->
+                            <div class="flex items-center justify-between mt-2">
+                                <div class="text-xs text-gray-500">
+                                    <span class="text-purple-400">#</span> DateCalc
+                                </div>
+                                <div class="text-purple-400 group-hover:translate-x-1 transition-transform duration-300 flex items-center">
+                                    <span class="mr-1 text-sm">Usar</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-lg font-semibold text-purple-300 mb-2">DIFERENÇA DATAS</h3>
-                            <p class="text-sm text-green-200 mb-4">
-                                Calcula diferença.<br>
-                                Infraestrutura Brasília<br>
-                                Infraestrutura Brasília
-                            </p>
-                            <a href="ferramenta-diferenca-datas.html" class="block w-full bg-purple-600 hover:bg-purple-700 text-white text-center py-2 rounded transition-colors font-mono text-sm">
-                                Usar
-                            </a>
-                        </div>
-                    </div>
+                    </a>
 
                 </div>
             </div>
