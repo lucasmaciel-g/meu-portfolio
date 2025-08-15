@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramentas - [Seu Nome]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Efeito de grid tecnológico no fundo */
+        .tech-grid {
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: grid-move 20s linear infinite;
+        }
+        
+        @keyframes grid-move {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+        
+        /* Efeito de brilho neon */
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+        
+        /* Efeito de hologram */
+        .hologram {
+            background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+            border: 1px solid rgba(0, 255, 255, 0.3);
+        }
+        
+        /* Efeito de scan line */
+        .scan-line {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .scan-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.4), transparent);
+            animation: scan 3s infinite;
+        }
+        
+        @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Filtros de categoria */
+        .category-filter.active {
+            background: linear-gradient(45deg, #0891b2, #3b82f6);
+        }
+    </style>
+</head>
+<body class="bg-black text-cyan-100 font-mono tech-grid relative overflow-x-hidden min-h-screen">
+    <!-- Header e Navbar -->
+    <header class="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50 border-b border-cyan-500/30">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold text-cyan-400 neon-text">
+                    > <a href="../../index.html" class="hover:text-green-400 transition-colors">[Seu Nome]</a>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="../../index.html" class="text-green-400 hover:text-cyan-400 transition-colors">
+                        ./back_to_home
+                    </a>
+                    <div class="text-yellow-400 text-sm">
+                        ./tools_hub
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-24 pb-12">
+        <!-- Hero da página -->
+        <section class="py-12 text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-5xl font-bold text-cyan-400 neon-text mb-4">
+                    Ferramentas com JS
+                </h1>
+                <p class="text-green-400 text-lg mb-6">
+                    Ferramentas com JS Ferramentas com JS Ferramentas com JS Ferramentas com<br>
+                    JS Ferramentas com JS Ferramentas com JS Ferramentas com JS
+                </p>
+                
+                <!-- Barra de Busca -->
+                <div class="max-w-md mx-auto mb-8">
+                    <input 
+                        type="text" 
+                        id="searchInput"
+                        placeholder="Transformar texto em maiúsculas..."
+                        class="w-full px-4 py-3 bg-gray-900/80 border border-cyan-400/50 rounded-full text-cyan-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent font-mono text-center"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- Filtros de Categoria -->
+        <section class="py-4">
+            <div class="container mx-auto px-6">
+                <div class="flex justify-center space-x-4 mb-8">
+                    <button class="category-filter active px-6 py-2 rounded-full border border-cyan-400/30 text-cyan-400 hover:bg-cyan-900/30 transition-all font-mono text-sm" data-category="all">
+                        Todas
+                    </button>
+                    <button class="category-filter px-6 py-2 rounded-full border border-blue-400/30 text-blue-400 hover:bg-blue-900/30 transition-all font-mono text-sm" data-category="texto">
+                        Para Textos
+                    </button>
+                    <button class="category-filter px-6 py-2 rounded-full border border-green-400/30 text-green-400 hover:bg-green-900/30 transition-all font-mono text-sm" data-category="numeros">
+                        Números
+                    </button>
+                    <button class="category-filter px-6 py-2 rounded-full border border-purple-400/30 text-purple-400 hover:bg-purple-900/30 transition-all font-mono text-sm" data-category="datas">
+                        Datas
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Ferramentas para Textos -->
+        <section class="py-8 category-section" data-category="texto">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-cyan-400 mb-6 text-center">Ferramentas para Textos</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    
+                    <!-- Card: Tudo em Maiúsculas -->
+                    <div class="hologram rounded-lg overflow-hidden scan-line group hover:neon-glow transition-all duration-300">
+                        <div class="h-32 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 flex items-center justify-center border-b border-cyan-400/30">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-cyan-300 mb-1">ABC</div>
+                                <div class="text-xs text-gray-400">texto → TEXTO</div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-cyan-300 mb-2">TUDO EM MAIÚSCULO</h3>
+                            <p class="text-sm text-green-200 mb-4">
+                                Tudo em maiúsculas.<br>
+                                Infraestrutura Brasília<br>
+                                Infraestrutura Brasília
+                            </p>
+                            <a href="./textos/maiusculo.html" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2 rounded transition-colors font-mono text-sm">
+                                Usar
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card: Tudo em Minúsculas -->
+                    <div class="hologram rounded-lg overflow-hidden scan-line group hover:neon-glow transition-all duration-300">
+                        <div class="h-32 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 flex items-center justify-center border-b border-cyan-400/30">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-cyan-300 mb-1">abc</div>
+                                <div class="text-xs text-gray-400">TEXTO → texto</div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-cyan-300 mb-2">TUDO EM MINÚSCULO</h3>
+                            <p class="text-sm text-green-200 mb-4">
+                                Tudo em minúsculas.<br>
+                                Infraestrutura Brasília<br>
+                                Infraestrutura Brasília
+                            </p>
+                            <a href="ferramenta-minusculo.html" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2 rounded transition-colors font-mono text-sm">
+                                Usar
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card: Base64 Converter -->
+                    <div class="hologram rounded-lg overflow-hidden scan-line group hover:neon-glow transition-all duration-300">
+                        <div class="h-32 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 flex items-center justify-center border-b border-cyan-400/30">
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-cyan-300 mb-1">Base64</div>
+                                <div class="text-xs text-gray-400">encode/decode</div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-cyan-300 mb-2">BASE64 CONVERTER</h3>
+                            <p class="text-sm text-green-200 mb-4">
+                                Encode/decode Base64.<br>
+                                Infraestrutura Brasília<br>
+                                Infraestrutura Brasília
+                            </p>
+                            <a href="ferramenta-base64.html" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2 rounded transition-colors font-mono text-sm">
+                                Usar
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Ferramentas para Números -->
+        <section class="py-8 category-section hidden" data-category="numeros">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-green-400 mb-6 text-center">Ferramentas para Números</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    
+                    <!-- Card: Calculadora -->
+                    <div class="hologram rounded-lg overflow-hidden scan-line group hover:neon-glow transition-all duration-300">
+                        <div class="h-32 bg-gradient-to-br from-green-600/20 to-emerald-600/20 flex items-center justify-center border-b border-green-400/30">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-green-300 mb-1">1+1=2</div>
+                                <div class="text-xs text-gray-400">calculator</div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-green-300 mb-2">CALCULADORA</h3>
+                            <p class="text-sm text-green-200 mb-4">
+                                Calculadora básica.<br>
+                                Infraestrutura Brasília<br>
+                                Infraestrutura Brasília
+                            </p>
+                            <a href="./numeros/calculadora.html" class="block w-full bg-green-600 hover:bg-green-700 text-white text-center py-2 rounded transition-colors font-mono text-sm">
+                                Usar
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card: Conversor de Moedas -->
+                    <div class="hologram rounded-lg overflow-hidden scan-line group hover:neon-glow transition-all duration-300">
+                        <div class="h-32 bg-gradient-to-br from-green-600/20 to-emerald-600/20 flex items-center justify-center border-b border-green-400/30">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-green-300 mb-1">$€¥</div>
+                                <div class="text-xs text-gray-400">currency</div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-green-300 mb-2">CONVERSOR MOEDAS</h3>
+                            <p class="text-sm text-green-200 mb-4">
+                                Converte moedas.<br>
+                                Infraestrutura Brasília<br>
+                                Infraestrutura Brasília
+                            </p>
+                            <a href="ferramenta-moedas.html" class="block w-full bg-green-600 hover:bg-green-700 text-white text-center py-2 rounded transition-colors font-mono text-sm">
+                                Usar
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Ferramentas para Datas -->
+        <section class="py-8 category-section hidden" data-category="datas">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl font-bold text-purple-400 mb-6 text-center">Ferramentas para Datas</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    
+                    <!-- Card: Timestamp Converter -->
+                    <div class="hologram rounded-lg overflow-hidden scan-line group hover:neon-glow transition-all duration-300">
+                        <div class="h-32 bg-gradient-to-br from-purple-600/20 to-pink-600/20 flex items-center justify-center border-b border-purple-400/30">
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-purple-300 mb-1">1640995200</div>
+                                <div class="text-xs text-gray-400">timestamp → data</div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-purple-300 mb-2">TIMESTAMP CONVERTER</h3>
+                            <p class="text-sm text-green-200 mb-4">
+                                Converte timestamp.<br>
+                                Infraestrutura Brasília<br>
+                                Infraestrutura Brasília
+                            </p>
+                            <a href="./datas/timestamp.html" class="block w-full bg-purple-600 hover:bg-purple-700 text-white text-center py-2 rounded transition-colors font-mono text-sm">
+                                Usar
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card: Diferença entre Datas -->
+                    <div class="hologram rounded-lg overflow-hidden scan-line group hover:neon-glow transition-all duration-300">
+                        <div class="h-32 bg-gradient-to-br from-purple-600/20 to-pink-600/20 flex items-center justify-center border-b border-purple-400/30">
+                            <div class="text-center">
+                                <div class="text-lg font-bold text-purple-300 mb-1">📅 ↔ 📅</div>
+                                <div class="text-xs text-gray-400">date diff</div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold text-purple-300 mb-2">DIFERENÇA DATAS</h3>
+                            <p class="text-sm text-green-200 mb-4">
+                                Calcula diferença.<br>
+                                Infraestrutura Brasília<br>
+                                Infraestrutura Brasília
+                            </p>
+                            <a href="ferramenta-diferenca-datas.html" class="block w-full bg-purple-600 hover:bg-purple-700 text-white text-center py-2 rounded transition-colors font-mono text-sm">
+                                Usar
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-cyan-500/30 py-8 bg-black/50 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-green-400 font-mono">
+                <span class="text-cyan-400">©</span> 2025 <span class="text-yellow-400">[Seu Nome]</span>
+                <span class="text-gray-500">// Hub de ferramentas</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../scripts/ferramentas.js" defer></script>
+    <script src="../scripts/particulas.js" defer></script>
+</body>
+</html>

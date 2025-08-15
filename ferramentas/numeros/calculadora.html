@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora - [Seu Nome]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Efeito de grid tecnológico no fundo */
+        .tech-grid {
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: grid-move 20s linear infinite;
+        }
+        
+        @keyframes grid-move {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+        
+        /* Efeito de brilho neon */
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+        
+        /* Efeito de hologram */
+        .hologram {
+            background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+            border: 1px solid rgba(0, 255, 255, 0.3);
+        }
+
+        /* Calculator buttons */
+        .calc-btn {
+            height: 4rem;
+            font-size: 1.125rem;
+            font-weight: bold;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+            transform: scale(1);
+            font-family: monospace;
+        }
+
+        .calc-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .calc-btn:active {
+            transform: scale(0.95);
+        }
+
+        .calc-btn-number {
+            background-color: #1f2937;
+            color: #a5f3fc;
+            border: 1px solid rgba(8, 145, 178, 0.3);
+        }
+
+        .calc-btn-number:hover {
+            background-color: #374151;
+        }
+
+        .calc-btn-operator {
+            background: linear-gradient(to right, #ea580c, #dc2626);
+            color: white;
+        }
+
+        .calc-btn-operator:hover {
+            background: linear-gradient(to right, #c2410c, #b91c1c);
+        }
+
+        .calc-btn-function {
+            background: linear-gradient(to right, #9333ea, #4338ca);
+            color: white;
+        }
+
+        .calc-btn-function:hover {
+            background: linear-gradient(to right, #7c3aed, #3730a3);
+        }
+
+        .calc-btn-equals {
+            background: linear-gradient(to right, #059669, #047857);
+            color: white;
+        }
+
+        .calc-btn-equals:hover {
+            background: linear-gradient(to right, #047857, #065f46);
+        }
+
+        /* Display */
+        .calc-display {
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.05em;
+        }
+
+        /* History animation */
+        .history-item {
+            animation: slideInRight 0.3s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-black text-cyan-100 font-mono tech-grid relative overflow-x-hidden min-h-screen">
+    <!-- Header e Navbar -->
+    <header class="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50 border-b border-cyan-500/30">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold text-cyan-400 neon-text">
+                    > <a href="../../../../index.html" class="hover:text-green-400 transition-colors">[Seu Nome]</a>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="../ferramentas.html" class="text-green-400 hover:text-cyan-400 transition-colors">
+                        ./back_to_tools
+                    </a>
+                    <a href="../../index.html" class="text-blue-400 hover:text-cyan-400 transition-colors">
+                        ./home
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-24 pb-12">
+        <!-- Hero da ferramenta -->
+        <section class="py-12 text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-5xl font-bold text-cyan-400 neon-text mb-4">
+                    CALCULADORA CIENTÍFICA
+                </h1>
+                <p class="text-green-400 text-lg mb-4">
+                    <span class="text-gray-500">// </span>Calculadora avançada com funções matemáticas
+                </p>
+                <div class="text-cyan-300 font-mono">
+                    <span class="text-green-400">Math</span>.<span class="text-yellow-400">pow</span>(<span class="text-purple-400">x</span>, <span class="text-purple-400">y</span>) → x<sup>y</sup>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculadora -->
+        <section class="py-8">
+            <div class="container mx-auto px-6">
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        
+                        <!-- Calculadora Principal -->
+                        <div class="lg:col-span-2">
+                            <div class="hologram rounded-lg p-8 neon-glow">
+                                <!-- Display -->
+                                <div class="mb-6 bg-black/70 border border-green-400/50 rounded-lg p-4">
+                                    <div class="text-right">
+                                        <div id="expression" class="text-gray-400 text-sm mb-1 calc-display min-h-[20px]"></div>
+                                        <div id="display" class="text-green-400 text-3xl calc-display min-h-[40px] overflow-hidden">
+                                            0
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Botões -->
+                                <div class="grid grid-cols-5 gap-3">
+                                    <!-- Linha 1: Funções especiais -->
+                                    <button class="calc-btn-function" onclick="clearAll()">C</button>
+                                    <button class="calc-btn-function" onclick="clearEntry()">CE</button>
+                                    <button class="calc-btn-function" onclick="backspace()">⌫</button>
+                                    <button class="calc-btn-function" onclick="addFunction('sqrt(')">√</button>
+                                    <button class="calc-btn-operator" onclick="addOperator('/')">÷</button>
+
+                                    <!-- Linha 2 -->
+                                    <button class="calc-btn-function" onclick="addFunction('pow(')">x²</button>
+                                    <button class="calc-btn-number" onclick="addNumber('7')">7</button>
+                                    <button class="calc-btn-number" onclick="addNumber('8')">8</button>
+                                    <button class="calc-btn-number" onclick="addNumber('9')">9</button>
+                                    <button class="calc-btn-operator" onclick="addOperator('*')">×</button>
+
+                                    <!-- Linha 3 -->
+                                    <button class="calc-btn-function" onclick="addFunction('sin(')">sin</button>
+                                    <button class="calc-btn-number" onclick="addNumber('4')">4</button>
+                                    <button class="calc-btn-number" onclick="addNumber('5')">5</button>
+                                    <button class="calc-btn-number" onclick="addNumber('6')">6</button>
+                                    <button class="calc-btn-operator" onclick="addOperator('-')">-</button>
+
+                                    <!-- Linha 4 -->
+                                    <button class="calc-btn-function" onclick="addFunction('cos(')">cos</button>
+                                    <button class="calc-btn-number" onclick="addNumber('1')">1</button>
+                                    <button class="calc-btn-number" onclick="addNumber('2')">2</button>
+                                    <button class="calc-btn-number" onclick="addNumber('3')">3</button>
+                                    <button class="calc-btn-operator" onclick="addOperator('+')">+</button>
+
+                                    <!-- Linha 5 -->
+                                    <button class="calc-btn-function" onclick="addFunction('tan(')">tan</button>
+                                    <button class="calc-btn-number" onclick="addNumber('0')">0</button>
+                                    <button class="calc-btn-number" onclick="addDecimal()">.</button>
+                                    <button class="calc-btn-function" onclick="addConstant('pi')">π</button>
+                                    <button class="calc-btn-equals" onclick="calculate()" style="grid-column: span 1;">=</button>
+                                </div>
+
+                                <!-- Linha adicional com mais funções -->
+                                <div class="grid grid-cols-5 gap-3 mt-3">
+                                    <button class="calc-btn-function" onclick="addFunction('log(')">log</button>
+                                    <button class="calc-btn-function" onclick="addFunction('ln(')">ln</button>
+                                    <button class="calc-btn-function" onclick="addConstant('e')">e</button>
+                                    <button class="calc-btn-function" onclick="addParenthesis('(')">(</button>
+                                    <button class="calc-btn-function" onclick="addParenthesis(')')">)</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Histórico e Memória -->
+                        <div class="space-y-6">
+                            <!-- Histórico -->
+                            <div class="hologram rounded-lg p-6 neon-glow">
+                                <h3 class="text-xl font-semibold text-cyan-300 mb-4">
+                                    <span class="text-green-400">> </span>Histórico
+                                </h3>
+                                <div id="history" class="space-y-2 max-h-64 overflow-y-auto">
+                                    <div class="text-gray-400 text-sm text-center py-4">
+                                        Nenhum cálculo ainda
+                                    </div>
+                                </div>
+                                <button 
+                                    onclick="clearHistory()" 
+                                    class="mt-4 w-full bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded text-sm transition-colors"
+                                >
+                                    Limpar Histórico
+                                </button>
+                            </div>
+
+                            <!-- Memória -->
+                            <div class="hologram rounded-lg p-6">
+                                <h3 class="text-xl font-semibold text-cyan-300 mb-4">
+                                    <span class="text-yellow-400">> </span>Memória
+                                </h3>
+                                <div class="space-y-2">
+                                    <div class="bg-black/50 rounded p-3 border border-yellow-400/30">
+                                        <div class="text-yellow-400 text-sm mb-1">Valor Armazenado:</div>
+                                        <div id="memoryValue" class="font-mono text-green-300">0</div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2 mt-4">
+                                        <button onclick="memoryClear()" class="bg-gray-600 hover:bg-gray-700 text-white py-2 px-3 rounded text-sm">MC</button>
+                                        <button onclick="memoryRecall()" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-3 rounded text-sm">MR</button>
+                                        <button onclick="memoryAdd()" class="bg-green-600 hover:bg-green-700 text-white py-2 px-3 rounded text-sm">M+</button>
+                                        <button onclick="memorySubtract()" class="bg-red-600 hover:bg-red-700 text-white py-2 px-3 rounded text-sm">M-</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Informações -->
+                    <div class="mt-8 hologram rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-cyan-300 mb-4">
+                            <span class="text-green-400">// </span>Funções Disponíveis:
+                        </h3>
+                        <div class="grid md:grid-cols-3 gap-4 text-sm">
+                            <div>
+                                <h4 class="text-cyan-400 font-semibold mb-2">Operações Básicas:</h4>
+                                <div class="text-green-200 space-y-1">
+                                    <p>• + - × ÷ (Aritmética)</p>
+                                    <p>• x² (Potência)</p>
+                                    <p>• √ (Raiz quadrada)</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-yellow-400 font-semibold mb-2">Trigonometria:</h4>
+                                <div class="text-green-200 space-y-1">
+                                    <p>• sin, cos, tan</p>
+                                    <p>• Ângulos em radianos</p>
+                                    <p>• Constante π (pi)</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-purple-400 font-semibold mb-2">Avançadas:</h4>
+                                <div class="text-green-200 space-y-1">
+                                    <p>• log (base 10)</p>
+                                    <p>• ln (logaritmo natural)</p>
+                                    <p>• Constante e</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-cyan-500/30 py-8 bg-black/50 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-green-400 font-mono">
+                <span class="text-cyan-400">©</span> 2025 <span class="text-yellow-400">[Seu Nome]</span>
+                <span class="text-gray-500">// Ferramenta: Calculadora</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        let display = document.getElementById('display');
+        let expression = document.getElementById('expression');
+        let currentExpression = '';
+        let result = null;
+        let memory = 0;
+        let history = [];
+
+        function updateDisplay() {
+            if (currentExpression === '') {
+                display.textContent = result !== null ? result : '0';
+                expression.textContent = '';
+            } else {
+                display.textContent = currentExpression;
+                expression.textContent = currentExpression;
+            }
+        }
+
+        function addNumber(number) {
+            if (result !== null && currentExpression === '') {
+                result = null;
+            }
+            currentExpression += number;
+            updateDisplay();
+        }
+
+        function addOperator(operator) {
+            if (currentExpression === '' && result !== null) {
+                currentExpression = result + ' ' + operator + ' ';
+            } else if (currentExpression !== '') {
+                currentExpression += ' ' + operator + ' ';
+            }
+            updateDisplay();
+        }
+
+        function addDecimal() {
+            const parts = currentExpression.split(/[\+\-\*\/]/);
+            const lastPart = parts[parts.length - 1].trim();
+            if (!lastPart.includes('.')) {
+                if (lastPart === '') {
+                    currentExpression += '0.';
+                } else {
+                    currentExpression += '.';
+                }
+                updateDisplay();
+            }
+        }
+
+        function addFunction(func) {
+            currentExpression += func;
+            updateDisplay();
+        }
+
+        function addConstant(constant) {
+            if (constant === 'pi') {
+                currentExpression += Math.PI;
+            } else if (constant === 'e') {
+                currentExpression += Math.E;
+            }
+            updateDisplay();
+        }
+
+        function addParenthesis(paren) {
+            currentExpression += paren;
+            updateDisplay();
+        }
+
+        function clearAll() {
+            currentExpression = '';
+            result = null;
+            updateDisplay();
+        }
+
+        function clearEntry() {
+            currentExpression = '';
+            updateDisplay();
+        }
+
+        function backspace() {
+            if (currentExpression.length > 0) {
+                currentExpression = currentExpression.slice(0, -1);
+                updateDisplay();
+            }
+        }
+
+        function calculate() {
+            if (currentExpression === '') return;
+
+            try {
+                let expr = currentExpression;
+                
+                // Substituir funções matemáticas
+                expr = expr.replace(/sqrt\(/g, 'Math.sqrt(');
+                expr = expr.replace(/pow\(/g, 'Math.pow(');
+                expr = expr.replace(/sin\(/g, 'Math.sin(');
+                expr = expr.replace(/cos\(/g, 'Math.cos(');
+                expr = expr.replace(/tan\(/g, 'Math.tan(');
+                expr = expr.replace(/log\(/g, 'Math.log10(');
+                expr = expr.replace(/ln\(/g, 'Math.log(');
+                
+                // Avaliar expressão
+                result = eval(expr);
+                
+                // Arredondar resultado para evitar problemas de ponto flutuante
+                result = Math.round(result * 1000000000000) / 1000000000000;
+                
+                // Adicionar ao histórico
+                addToHistory(currentExpression, result);
+                
+                currentExpression = '';
+                updateDisplay();
+                
+            } catch (error) {
+                display.textContent = 'ERRO';
+                expression.textContent = 'Expressão inválida';
+                setTimeout(() => {
+                    clearAll();
+                }, 2000);
+            }
+        }
+
+        function addToHistory(expr, result) {
+            const historyContainer = document.getElementById('history');
+            
+            if (history.length === 0) {
+                historyContainer.innerHTML = '';
+            }
+            
+            history.unshift({ expression: expr, result: result });
+            
+            // Limitar histórico a 10 itens
+            if (history.length > 10) {
+                history = history.slice(0, 10);
+            }
+            
+            renderHistory();
+        }
+
+        function renderHistory() {
+            const historyContainer = document.getElementById('history');
+            historyContainer.innerHTML = '';
+            
+            history.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'history-item bg-black/50 rounded p-2 border border-cyan-400/20 cursor-pointer hover:border-cyan-400/50 transition-colors';
+                div.innerHTML = `
+                    <div class="text-cyan-300 text-sm font-mono">${item.expression}</div>
+                    <div class="text-green-400 font-mono">= ${item.result}</div>
+                `;
+                div.onclick = () => {
+                    currentExpression = item.result.toString();
+                    result = item.result;
+                    updateDisplay();
+                };
+                historyContainer.appendChild(div);
+            });
+        }
+
+        function clearHistory() {
+            history = [];
+            document.getElementById('history').innerHTML = `
+                <div class="text-gray-400 text-sm text-center py-4">
+                    Nenhum cálculo ainda
+                </div>
+            `;
+        }
+
+        // Funções de memória
+        function memoryClear() {
+            memory = 0;
+            document.getElementById('memoryValue').textContent = '0';
+        }
+
+        function memoryRecall() {
+            currentExpression = memory.toString();
+            result = memory;
+            updateDisplay();
+        }
+
+        function memoryAdd() {
+            const currentValue = result !== null ? result : parseFloat(currentExpression) || 0;
+            memory += currentValue;
+            document.getElementById('memoryValue').textContent = memory;
+        }
+
+        function memorySubtract() {
+            const currentValue = result !== null ? result : parseFloat(currentExpression) || 0;
+            memory -= currentValue;
+            document.getElementById('memoryValue').textContent = memory;
+        }
+
+        // Suporte a teclado
+        document.addEventListener('keydown', function(event) {
+            const key = event.key;
+            
+            if (/[0-9]/.test(key)) {
+                addNumber(key);
+            } else if (key === '+') {
+                addOperator('+');
+            } else if (key === '-') {
+                addOperator('-');
+            } else if (key === '*') {
+                addOperator('*');
+            } else if (key === '/') {
+                event.preventDefault();
+                addOperator('/');
+            } else if (key === '.') {
+                addDecimal();
+            } else if (key === 'Enter' || key === '=') {
+                event.preventDefault();
+                calculate();
+            } else if (key === 'Escape') {
+                clearAll();
+            } else if (key === 'Backspace') {
+                backspace();
+            } else if (key === '(') {
+                addParenthesis('(');
+            } else if (key === ')') {
+                addParenthesis(')');
+            }
+        });
+
+        // Inicializar display
+        updateDisplay();
+    </script>
+</body>
+</html>
