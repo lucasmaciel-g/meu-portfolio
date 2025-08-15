@@ -22,6 +22,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Inicializa a página mostrando todas as categorias
+    showCategorySection('all');
+    
+    // Certifica-se de que o botão "Todas" está marcado como ativo
+    categoryFilters.forEach(filter => {
+        if (filter.dataset.category === 'all') {
+            filter.classList.add('active');
+        } else {
+            filter.classList.remove('active');
+        }
+    });
+
     // Event listeners para os filtros de categoria
     categoryFilters.forEach(filter => {
         filter.addEventListener('click', function() {
